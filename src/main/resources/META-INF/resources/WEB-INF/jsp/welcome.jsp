@@ -8,7 +8,9 @@
     <title>Welcome Page</title>
 </head>
 <body>
-    <p>Welcome to in28minutes ${name}!
-    <div><a href="list-todos">Manage</a> your todos</div>
+    <div class="container">
+        <h1>Welcome to in28minutes ${name}! </h1>
+        <div><a href="list-todos">Manage</a> your todos</div>
+    </div>
 </body>
 </html>

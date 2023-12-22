@@ -1,37 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>List Todos Page</title>
-</head>
-<body>
-    <di>[${name}]</di>
-
-    <table>
-        <thead>
-            <tr>
-                <th>id</th>
-                <th>Description</th>
-                <th>Target Date</th>
-                <th>Is Done?</th>
-            </tr>
-        </thead>
-        <tbody>
-        <c:forEach items="${todos}" var="todo">
-            <tr>
-                <td>${todo.id}</td>
-                <td>${todo.description}</td>
-                <td>${todo.targetDate}</td>
-                <td>${todo.done}</td>
-            </tr>
-        </c:forEach>
-        </tbody>
-    </table>
-
-</body>
-</html>
+<%@ include file="common/header.jspf"%>
+<%@ include file="common/navigation.jspf" %>
+    <div class="container">
+        <h1>[${name}]</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Target Date</th>
+                    <th>Is Done?</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${todos}" var="todo">
+                <tr>
+                    <td>${todo.description}</td>
+                    <td>${todo.targetDate}</td>
+                    <td>${todo.done}</td>
+                    <td><a href="delete-todo?id=${todo.id}" class="btn btn-warning">DELETE</a></td>
+                    <td><a href="update-todo?id=${todo.id}" class="btn btn-success">UPDATE</a></td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+        <a href="add-todo" class="btn btn-success">Add Todo</a>
+    </div>
+<%@ include file="common/footer.jspf" %>

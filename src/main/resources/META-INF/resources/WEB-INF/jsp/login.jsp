@@ -10,11 +10,13 @@
 <body>
     Welcome to the login page!
 
-    <pre>${errorMessage}</pre>
-    <form action="" method="post">
-        <p>Name : <input type="text" name="name"></p>
-        <p>Password : <input type="password" name="pw"></p>
-        <input type="submit">
-    </form>
+    <div class="container">
+        <pre>${errorMessage}</pre>
+        <form action="" method="post">
+            <p>Name : <input type="text" name="name"></p>
+            <p>Password : <input type="password" name="pw"></p>
+            <input type="submit">
+        </form>
+    </div>
 </body>
 </html>
